@@ -18,11 +18,12 @@ type IInitConnection = {
 };
 
 export const initConnectionMQTT = ({ username, password, topic, idUser}: IInitConnection) => {
+
+	// mqtt credentials
 	const mqttClient = mqtt.connect('mqtt://peru-iot4.com', {
 		port: 1883,
 		host: 'peru-iot4.com',
-		clientId:
-			'access_control_server_' + Math.round(Math.random() * (0 - 10000) * -1),
+		clientId: 'access_control_server_' + Math.round(Math.random() * (0 - 10000) * -1),
 		username: username,
 		password: password,
 		keepalive: 60,
