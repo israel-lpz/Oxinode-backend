@@ -1,12 +1,12 @@
 import { Sequelize } from 'sequelize';
 
 const sequelize: Sequelize = new Sequelize({
-	database: 'mqtt',
-	host: 'peru-iot4.com',
+	database: '',
+	host: '',
 	dialect: 'mysql',
-	password: 'prueba123',
+	password: '',
 	// username: 'admin_bd',
-	username: 'oxinode',
+	username: '',
 	port: 3306,
 });
 
