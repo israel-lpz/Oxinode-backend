@@ -83,12 +83,12 @@ class UserResolver {
 				const transporter = nodemailer.createTransport({
 					service: 'hotmail',
 					auth: {
-						user: 'peru-iot4@hotmail.com',
+						user: process.env.correo_topicos || '',
 						pass: 'ckj0mchx',
 					},
 				});
 				const mailOptions: nodemailer.SendMailOptions = {
-					from: 'peru-iot4@hotmail.com',
+					from: process.env.correo_topicos || '',
 					to: email,
 					subject: 'Cuenta en Peru-iot4.com',
 					text: `Usuario MQTT: ${userMQTT} \nPassword MQTT ${passwordMQTT} \nTopico Raiz: ${topicMQTT}`,
