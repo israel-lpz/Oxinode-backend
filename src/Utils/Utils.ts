@@ -1,11 +1,7 @@
 import mqtt from 'mqtt';
 import { Extra, Markup } from 'telegraf';
 import { CallbackButton } from 'telegraf/typings/markup';
-import {
-	mqttClientMap,
-	telegramBots,
-	serverSocket,
-} from '../Config/configMqtt';
+import { mqttClientMap, telegramBots, serverSocket} from '../Config/configMqtt';
 import DeviceDataModel from '../Models/DeviceDataModel';
 import DevicesModel, { IDeviceBase } from '../Models/DevicesModel';
 import MqttAcl from '../Models/mqttAcl';
@@ -21,12 +17,7 @@ type IInitConnection = {
 	idUser: number;
 };
 
-export const initConnectionMQTT = ({
-	username,
-	password,
-	topic,
-	idUser,
-}: IInitConnection) => {
+export const initConnectionMQTT = ({ username, password, topic, idUser}: IInitConnection) => {
 	const mqttClient = mqtt.connect('mqtt://peru-iot4.com', {
 		port: 1883,
 		host: 'peru-iot4.com',
