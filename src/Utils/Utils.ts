@@ -20,9 +20,9 @@ type IInitConnection = {
 export const initConnectionMQTT = ({ username, password, topic, idUser}: IInitConnection) => {
 
 	// mqtt credentials
-	const mqttClient = mqtt.connect('mqtt://peru-iot4.com', {
+	const mqttClient = mqtt.connect('mqtt://ipbroker', {
 		port: 1883,
-		host: 'peru-iot4.com',
+		host: 'ipbroker',
 		clientId: 'access_control_server_' + Math.round(Math.random() * (0 - 10000) * -1),
 		username: username,
 		password: password,
@@ -132,7 +132,7 @@ export const initBotTelegram = async (userId: number, chatId: string) => {
 				options.push(
 					Markup.callbackButton(
 						info.panelName,
-						`[${info.idDB}, "${info.topic}"]`,
+						`[${info.id}, "${info.topic}"]`,
 					),
 				);
 			}
