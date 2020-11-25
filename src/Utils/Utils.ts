@@ -110,10 +110,10 @@ export const initBotTelegram = async (userId: number, chatId: string) => {
 					}
 				}
 			} else {
-				await ctx.reply(`Topico ${topicDevice} no encontrado`);
+				await ctx.reply(`Dispositivo ${topicDevice} no encontrado`);
 			}
 		} else {
-			await ctx.reply('Topico no valido');
+			await ctx.reply('Ha ocurrido un error');
 		}
 	});
 
@@ -132,7 +132,7 @@ export const initBotTelegram = async (userId: number, chatId: string) => {
 				options.push(
 					Markup.callbackButton(
 						info.panelName,
-						`[${info.id}, "${info.topic}"]`,
+						`[${device.id}, "${info.topic}"]`,
 					),
 				);
 			}
